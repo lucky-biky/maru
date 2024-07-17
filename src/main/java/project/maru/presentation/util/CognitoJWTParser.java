@@ -14,12 +14,15 @@ import java.net.URL;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CognitoJWTParser {
 
-  private static final String JWKS_URL = Dotenv.load().get("JWKS_URL");
+  @Value("${JWKS_URL}")
+  private String JWKS_URL;
+//  private static final String JWKS_URL = Dotenv.load().get("JWKS_URL");
 
   public DecodedJWT parseToken(String token) throws Exception {
     String jwtToken = token.substring(7); // "Bearer " 이후의 토큰 값을 가져옴
