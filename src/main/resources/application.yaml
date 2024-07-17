@@ -30,6 +30,6 @@ springdoc:
 cors-allow-domain:
   front-end: https://main.d1fiaeemrgw9n.amplifyapp.com
   test-end: https://0n60uii660.execute-api.ap-northeast-2.amazonaws.com
-alb-end: ${ALB_DOMAIN}
+  alb-end: ${ALB_DOMAIN}
 
 
