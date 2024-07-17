@@ -1,21 +1,24 @@
 server:
-  port: ${SERVER_PORT}
+  port: 80
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: ${DATA_BASE_URL}
-    username: ${DATA_BASE_ID}
-    password: ${DATA_BASE_PASSWORD}
+    url: jdbc:mariadb://database-2.cxygysoqawio.us-west-2.rds.amazonaws.com:3306/innodb
+    username: admin
+    password: kosatest12!!
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     generate-ddl: true
     show-sql: true
     database-platform: org.hibernate.dialect.MariaDBDialect
 
 springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
   swagger-ui:
-    path: /docs
+    path: /swagger-ui-custom.html
     groups-order: DESC
     doc-expansion: none
     tags-sorter: alpha
@@ -25,6 +28,8 @@ springdoc:
   show-login-endpoint: true
 
 cors-allow-domain:
-  front-end: ${FRONT_DOMAIN}
-  test-end: ${TEST_DOMAIN}
-  alb-end: ${ALB_DOMAIN}
+  front-end: https://main.d1fiaeemrgw9n.amplifyapp.com
+  test-end: https://0n60uii660.execute-api.ap-northeast-2.amazonaws.com
+alb-end: ${ALB_DOMAIN}
+
+
