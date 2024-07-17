@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8080
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
@@ -30,6 +30,6 @@ springdoc:
 cors-allow-domain:
   front-end: https://main.d1fiaeemrgw9n.amplifyapp.com
   test-end: https://0n60uii660.execute-api.ap-northeast-2.amazonaws.com
-  alb-end: https://api.kmaru.com
+  alb-end: https://0n60uii660.execute-api.ap-northeast-2.amazonaws.com
 
 JWKS_URL: https://cognito-idp.ap-northeast-2.amazonaws.com/ap-northeast-2_oCbvOn2fS/.well-known/jwks.json
