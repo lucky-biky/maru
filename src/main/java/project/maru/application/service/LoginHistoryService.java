@@ -2,6 +2,7 @@ package project.maru.application.service;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -54,12 +55,14 @@ public class LoginHistoryService {
   @Transactional
   public void insertUserLoginHistory(PostLoginRequest postLoginRequest) {
     String userId = postLoginRequest.getUserId();
+    LocalDateTime dt = LocalDateTime.now();
     LocalDate now = LocalDate.now();
     log.info("insert user의 로그인 시간은 localdate 기준 : " + now);
+    log.info("insert user의 로그인 시간은 localdate 기준 time : " + dt);
     // 오늘 시작, 끝 가져옴
     Timestamp startDate = DateUtils.toKstTimestampStartOfDay(now);
     Timestamp endDate = DateUtils.toKstTimestampEndOfDay(now);
-
+    log.info("insert user의 로그인 시간은 localdate 기준 : " + now);
     Integer results = userLoginLogsRepository.findByUserIdAndStartDateAndEndDateCount(
         userId, startDate, endDate);
     if (results == null || results == 0) {
