@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreRemove;
@@ -37,7 +38,8 @@ public class VoiceRecords {
   @JsonIgnore
   private QuestionsKr questionsKr;
 
-  @Column(name = "voice_records")
+  @Lob
+  @Column(name = "voice_records",columnDefinition = "MEDIUMTEXT")
   private String recordsVoice;
 
   @Column(name = "speech_to_text")
