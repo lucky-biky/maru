@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://database-2.cxygysoqawio.us-west-2.rds.amazonaws.com:3306/innodb
+    url: jdbc:mariadb://maru-db.c1i8scuqe7me.ap-northeast-2.rds.amazonaws.com:3306
     username: admin
     password: kosatest12!!
   jpa:
@@ -33,3 +33,6 @@ cors-allow-domain:
   alb-end: https://0n60uii660.execute-api.ap-northeast-2.amazonaws.com
 
 JWKS_URL: https://cognito-idp.ap-northeast-2.amazonaws.com/ap-northeast-2_oCbvOn2fS/.well-known/jwks.json
+logging:
+  level:
+    root: debug
